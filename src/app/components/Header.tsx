@@ -1,5 +1,15 @@
 import { AccountCircle, Church } from "@mui/icons-material";
-import { AppBar, Avatar, IconButton, Toolbar, Typography } from "@mui/material";
+import {
+  AppBar,
+  Avatar,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import { Container } from "@mui/material";
 import React from "react";
 import Link from "next/link";
@@ -11,7 +21,7 @@ import QuestionAnswerOutlinedIcon from "@mui/icons-material/QuestionAnswerOutlin
 export default function Header() {
   return (
     <div>
-      <AppBar position="static" className="bg-purple-100  shadow-none">
+      <AppBar position="static" className="bg-purple-200  shadow-none">
         <Container maxWidth="4xl" className="flex justify-between">
           <Toolbar disableGutters className="">
             <Typography
@@ -35,42 +45,50 @@ export default function Header() {
               <Church />
               Bloc
             </Typography>
-            <ul className="flex hidden md:flex items-center gap-2 text-black text-sm">
-              <li className="">
+            <List className="flex hidden md:flex items-center gap-2 text-black text-sm">
+              <ListItem>
                 <Link href="/profile">
-                  <div className="flex items-center gap-1 rounded-3xl px-2 py-2 hve hover:bg-white hover:shadow-lg transition-all duration-300 ease-in-out   ">
-                    <AccountCircleOutlinedIcon className="h-4 " />
-                    Profile
+                  <div className="flex items-center gap-1 rounded-3xl px-2 py-2 hve hover:bg-white hover:shadow-lg transition-all duration-300 ease-in-out">
+                    <ListItemIcon>
+                      <AccountCircleOutlinedIcon className="h-4" />
+                    </ListItemIcon>
+                    <ListItemText primary="Profile" />
                   </div>
                 </Link>
-              </li>
-              <li>
+              </ListItem>
+              <ListItem>
                 <Link href="/spaces">
-                  <div className="flex items-center gap-1 rounded-3xl px-2 py-2 hve hover:bg-white hover:shadow-lg transition-all duration-300 ease-in-out   ">
-                    <GroupsOutlinedIcon className="h-4 " />
-                    Spaces
+                  <div className="flex items-center gap-1 rounded-3xl px-2 py-2 hve hover:bg-white hover:shadow-lg transition-all duration-300 ease-in-out">
+                    <ListItemIcon>
+                      <GroupsOutlinedIcon className="h-4" />
+                    </ListItemIcon>
+                    <ListItemText primary="Spaces" />
                   </div>
                 </Link>
-              </li>
-              <li>
-                <Link href="/apss">
-                  <div className="flex items-center gap-1 rounded-3xl px-2 py-2 hve hover:bg-white hover:shadow-lg transition-all duration-300 ease-in-out   ">
-                    <ViewInArOutlinedIcon className="h-4 " />
-                    Apps
+              </ListItem>
+              <ListItem>
+                <Link href="/apps">
+                  <div className="flex items-center gap-1 rounded-3xl px-2 py-2 hve hover:bg-white hover:shadow-lg transition-all duration-300 ease-in-out">
+                    <ListItemIcon>
+                      <ViewInArOutlinedIcon className="h-4" />
+                    </ListItemIcon>
+                    <ListItemText primary="Apps" />
                   </div>
                 </Link>
-              </li>
-              <li>
+              </ListItem>
+              <ListItem>
                 <Link href="/chat">
-                  <div className="flex items-center gap-1 rounded-3xl px-2 py-2 hve hover:bg-white hover:shadow-lg transition-all duration-300 ease-in-out   ">
-                    <QuestionAnswerOutlinedIcon className="h-4 " />
-                    Chat
+                  <div className="flex items-center gap-1 rounded-3xl px-2 py-2 hve hover:bg-white hover:shadow-lg transition-all duration-300 ease-in-out">
+                    <ListItemIcon>
+                      <QuestionAnswerOutlinedIcon className="h-4" />
+                    </ListItemIcon>
+                    <ListItemText primary="Chat" />
                   </div>
                 </Link>
-              </li>
-            </ul>
+              </ListItem>
+            </List>
           </Toolbar>
-          <div className="flex items-center ">
+          {/* <div className="flex items-center ">
             <IconButton
               size="large"
               aria-label="account of current "
@@ -82,7 +100,7 @@ export default function Header() {
               <Avatar className="w-7 h-7" />
               <p className="text-lg">nicknamelike</p>
             </IconButton>
-          </div>
+          </div> */}
         </Container>
       </AppBar>
     </div>
